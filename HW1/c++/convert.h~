@@ -1,0 +1,9 @@
+//by MALCOLM NAVARRO
+//convert.h
+
+class Convert
+{
+	public:
+		int convertToDec(int, int);
+		
+};
