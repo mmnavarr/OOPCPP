@@ -1,0 +1,41 @@
+//MALCOLM NAVAROO                                                              
+//CIS544 - OOP c++                                                             
+//main.cpp                                                                     
+//This is the main file -                                               
+     
+#include <iostream>
+using namespace std;
+
+#include "Worker.h"
+
+int main()
+{
+  int paycode;
+  //INIT WORKER OBJ
+  Worker w;
+
+
+  //RUN FOREVER (until paycode == -1)
+  while (true) {
+    //GET PAYCODE INPUT OF TYPE OF WORKER
+    cout << "Enter paycode (-1 to end): ";
+    cin >> paycode;
+
+    //IF PAYCODE = -1 EXIT LOOP
+    //ELSE IF PAYCODE ISNT VALID INPUT GET NEW INPUT
+    if (paycode == -1){
+      cout << "-1";
+      break;
+    } else if (paycode > 4 || paycode < -1 || paycode == 0){
+      cout << "Please enter a valid paycode!: ";
+      cin >> paycode;
+    }
+
+    //TO RETURN SALARY INFO
+    w.calc(paycode);
+  }
+
+  //AFTER 
+  w.showBarchart();
+  return 0;
+}

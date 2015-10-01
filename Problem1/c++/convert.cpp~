@@ -1,0 +1,34 @@
+//by MALCOLM NAVARRO
+//convert.cpp
+
+#include <iostream>
+using namespace std;
+#include <math.h>
+#include "convert.h"
+
+int Convert::convertToDec(int n, int b)
+{
+	int lastDigit;
+	int answer = 0;
+	int counter = 0;
+	
+	while ( n > 0 )
+	{
+		//STEP THROUGH
+		lastDigit = (n % 10);
+		n = (n / 10);
+		
+		//cout << "last digit: " << lastDigit << " -- n: " << n;
+			
+		//CHECK FOR INCORRECT INPUT
+		if ( lastDigit >= b)
+			return 0;
+				
+		//CONVERT TO DEC
+		answer += (lastDigit * pow((double) b, (double) counter));
+		
+		counter++;
+	}
+	
+	return answer;
+}
